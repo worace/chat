@@ -25,5 +25,12 @@
       $("#message_body").val("");
       scroll();
     });
+
+  var socket = io('http://localhost:4200');
+  socket.on('message', function (data) {
+    console.log(data);
   });
+  });
+
+
 </script>
