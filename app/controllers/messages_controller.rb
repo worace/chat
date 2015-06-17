@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
   def create
     m = Message.create(body: params[:message][:body])
+    REDIS.publish("messages", m.to_json)
     respond_to do |format|
       format.js { render json: {message: m}}
     end
