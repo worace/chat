@@ -1,0 +1,12 @@
+defaults: &defaults
+  socket_url: http://localhost:4200
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  socket_url: ""

@@ -24,7 +24,7 @@
       scroll();
     });
 
-    var socket = io('http://localhost:4200');
+    var socket = io('<%= ENV["socket_url"] %>');
     socket.on('message', function (data) {
       console.log("message received:");
       console.log(data);
